@@ -15,7 +15,7 @@ References : -[Geekforgeeks](https://www.geeksforgeeks.org/software-engineering/
 
 References: -[Dicoding](https://www.dicoding.com/blog/mengenal-blockchain-teknologi-yang-mengubah-dunia-digital/) -[Binus](https://online.binus.ac.id/2022/07/18/pengertian-blockchain-serta-manfaat-dan-cara-kerjanya/)
 
-# BLOCK, HASH & ONCE
+# BLOCK, HASH & NONCE
 
 ## Apa itu Block
 
@@ -37,7 +37,7 @@ References: -[Invesnesia](https://www.invesnesia.com/blockchain/hashing/)
 
 ## Nonce
 
-Nonce merupakan sebuah metode untuk mengurutkann & memisahkan transaksi pada jaringan Blockchain yang menggunakan Smart Contract sepert Etherium.
+Nonce merupakan sebuah metode untuk mengurutkann & memisahkan transaksi pada jaringan Blockchain yang menggunakan Smart Contract seperti Etherium.
 
 Kelemahan Nonce adalah apabila terjadi masalah pada urutan dengan nilai yang rendah maka transaksi selanjutnya akan eror.
 
@@ -56,3 +56,72 @@ References : -[BitDegree](https://id.bitdegree.org/crypto/belajar/istilah-dalam-
 | Kecepatan    | Lebih mahal untuk didirikan dan dijaga        | Biaya awal mungkin lebih rendah, tetapi pemeliharaan bisa lebih mahal |
 
 References : -[Pintu](https://pintu.co.id/blog/centralized-adalah#perbedaan-centralized-vs-decentralized)
+
+# PUBLIC KEY & PRIVATE KEY
+
+## Public Key
+
+Public key merupakan sebuah barisan kode kriptografi yang digunakan sebagai media untuk mengengkripsi, serta memvalidasi tanda tangan digital (_digital signatures_). Atau kita bisa anggap layaknya nomor rekening bank.
+
+## Private Key
+
+Private key merupakan sebuah baris kode rahasia yang berfungsi untuk membuka pesan yang tadinya terenkripsi oleh public key dan membuat tanda tangan digital. Kita bisa anggap private key sebagai nomor pin ATM, yang tidak boleh diketahui orang lain.
+
+## Perbedaan Public key vs Private Key
+
+| Fitur       | Public Key                           | Private Key                              |
+| ----------- | ------------------------------------ | ---------------------------------------- |
+| Tujuan      | Terima dana, verifikasi tanda tangan | Menandatangani transaksi, mengakses dana |
+| Visibilitas | Dapat dibagikan dengan siapa saja    | Harus tetap rahasia                      |
+| Analogi     | Nomor rekening bank                  | PIN atau kata sandi bank                 |
+| Generate    | Berasal dari kunci pribadi           | Dibuat terlebih dahulu, sumber pasangan  |
+| Dampak      | Dapat diambil                        | Dana menjadi tidak dapat diakses         |
+
+references: - [Moonpay](https://www.moonpay.com/learn/blockchain/public-key-vs-private-key)
+
+# Digital Signature
+
+## Apa itu Digital Signature
+
+Digital signature merupakan sebuah barisan dari kode unik yang dihasilkan dari penggabungngan antara pesan/data dan private key. Yang kemudian bisa diverikasi dengan public key.
+
+## Bagaimana Cara Kerja Digital Signature
+
+Langkah 1: Hashing
+
+> Pesan/data akan di hashing menjadi deretan kode unik
+
+Langkah 2: Signing
+
+> pada tahap wallet (Metamask/Trustwallet) akan menggunakan private key untuk "menstempel" hasil dari hash sebelumnya kemudian mengenkripsinya.
+
+Langkah 3: Broadcasting
+
+> pesan/data beserta signature yang sudah terenkripsi tadi akan dikirimkan ke jarinagn blockchain
+
+Langkah 4: Verifikasi
+
+> kemudian para validator akan menvalidasi apakah pesan/data tersebut
+
+# Wallet Address
+
+## Apa itu Wallet Address
+
+Wallet address merupakan rangkaian karakter yang digunakan sebagai id pengenal dalam menyimpan, mengirim dan menerima aset kripto
+
+## Bagaimana Wallet Address Terbentuk?
+
+1. Private Key: Dimulai dari angka acak yang sangat besar (rahasiakan ini!).
+2. Public Key: Private key diolah menggunakan matematika tingkat tinggi (Elliptic Curve Cryptography) untuk menjadi Public Key.
+3. Hashing: Public Key tersebut kemudian "diringkas" menggunakan algoritma Hash (seperti Keccak-256 atau SHA-256).
+4. Formatting: Hasil hash tadi diambil bagian belakangnya dan ditambah awalan tertentu (seperti 0x untuk Ethereum) untuk menjadi Wallet Address.
+
+note: Proses ini bersifat satu arah. Orang bisa tahu alamat Anda dari Public Key, tapi tidak ada yang bisa menebak Private Key Anda hanya dengan melihat Wallet Address.
+
+## Karakteristik Wallet Address
+
+| Jaringan       | Contoh Format | Ciri Khas                                                          |
+| -------------- | ------------- | ------------------------------------------------------------------ |
+| Ethereum (EVM) | 0x71C...397   | Selalu dimulai dengan 0x, terdiri dari 42 karakter.                |
+| Bitcoin        | bc1q...6f9    | Sering dimulai dengan 1, 3, atau bc1 (SegWit).                     |
+| Solana         | 4zV...8pQ     | Menggunakan Base58, kombinasi huruf besar dan kecil yang sensitif. |
