@@ -4,7 +4,10 @@
 
 Blockchain merupakan struktur teknologi yang menyimpan data kemudian mendistribuskannya ke semua komputer yang terhubung dalam jaringan tanpa ada pengendali tunggal.
 
-References : -[Geekforgeeks](https://www.geeksforgeeks.org/software-engineering/blockchain/) -[IBM](https://www.ibm.com/id-id/think/topics/blockchain)
+References :
+
+- [Geekforgeeks](https://www.geeksforgeeks.org/software-engineering/blockchain/)
+- [IBM](https://www.ibm.com/id-id/think/topics/blockchain)
 
 ## Bagaimana cara kerja Blockchain
 
@@ -13,7 +16,10 @@ References : -[Geekforgeeks](https://www.geeksforgeeks.org/software-engineering/
 3. Kemudian data/transaksi tersebut disimpan dalam sebuah block.
 4. Selanjutnya block tadi akan dihubungkan dengan block sebelumnya dalam jaringan Blockchain.
 
-References: -[Dicoding](https://www.dicoding.com/blog/mengenal-blockchain-teknologi-yang-mengubah-dunia-digital/) -[Binus](https://online.binus.ac.id/2022/07/18/pengertian-blockchain-serta-manfaat-dan-cara-kerjanya/)
+References:
+
+- [Dicoding](https://www.dicoding.com/blog/mengenal-blockchain-teknologi-yang-mengubah-dunia-digital/)
+- [Binus](https://online.binus.ac.id/2022/07/18/pengertian-blockchain-serta-manfaat-dan-cara-kerjanya/)
 
 # BLOCK, HASH & NONCE
 
@@ -27,13 +33,17 @@ Struktur Blok dalam Blockchain
 2. Body Blok
 3. Hash Blok
 
-References: -[Bisaioti](https://bisaioti.com/struktur-dan-cara-kerja-blok-dalam-blockchain/)
+References:
+
+- [Bisaioti](https://bisaioti.com/struktur-dan-cara-kerja-blok-dalam-blockchain/)
 
 ## Apa itu Hash
 
 Hash berfungsi untuk memvalidasi agar data tidak berubah, dengan mengubahnya menjadi string acak yang memiliki ukuran yang sama lewat algoritma tertentu seperti SHA-256.
 
-References: -[Invesnesia](https://www.invesnesia.com/blockchain/hashing/)
+References:
+
+- [Invesnesia](https://www.invesnesia.com/blockchain/hashing/)
 
 ## Nonce
 
@@ -41,7 +51,9 @@ Nonce merupakan sebuah metode untuk mengurutkann & memisahkan transaksi pada jar
 
 Kelemahan Nonce adalah apabila terjadi masalah pada urutan dengan nilai yang rendah maka transaksi selanjutnya akan eror.
 
-References : -[BitDegree](https://id.bitdegree.org/crypto/belajar/istilah-dalam-crypto/apa-itu-nonce#:~:text=Nonce%2C%20yang%20juga%20dikenal%20sebagai%20angka%20yang%20hanya,platform%20blockchain%20yang%20menggunakan%20kontrak%20pintar%2C%20seperti%20Ethereum.)
+References :
+
+- [BitDegree](https://id.bitdegree.org/crypto/belajar/istilah-dalam-crypto/apa-itu-nonce#:~:text=Nonce%2C%20yang%20juga%20dikenal%20sebagai%20angka%20yang%20hanya,platform%20blockchain%20yang%20menggunakan%20kontrak%20pintar%2C%20seperti%20Ethereum.)
 
 # Centralized vs Decentralized
 
@@ -55,7 +67,9 @@ References : -[BitDegree](https://id.bitdegree.org/crypto/belajar/istilah-dalam-
 | Kecepatan    | Biasanya lebih lambat                         | Dapat lebih cepat dengan banyak node                                  |
 | Kecepatan    | Lebih mahal untuk didirikan dan dijaga        | Biaya awal mungkin lebih rendah, tetapi pemeliharaan bisa lebih mahal |
 
-References : -[Pintu](https://pintu.co.id/blog/centralized-adalah#perbedaan-centralized-vs-decentralized)
+References :
+
+- [Pintu](https://pintu.co.id/blog/centralized-adalah#perbedaan-centralized-vs-decentralized)
 
 # PUBLIC KEY & PRIVATE KEY
 
@@ -77,7 +91,9 @@ Private key merupakan sebuah baris kode rahasia yang berfungsi untuk membuka pes
 | Generate    | Berasal dari kunci pribadi           | Dibuat terlebih dahulu, sumber pasangan  |
 | Dampak      | Dapat diambil                        | Dana menjadi tidak dapat diakses         |
 
-references: - [Moonpay](https://www.moonpay.com/learn/blockchain/public-key-vs-private-key)
+references:
+
+- [Moonpay](https://www.moonpay.com/learn/blockchain/public-key-vs-private-key)
 
 # Digital Signature
 
@@ -125,3 +141,85 @@ note: Proses ini bersifat satu arah. Orang bisa tahu alamat Anda dari Public Key
 | Ethereum (EVM) | 0x71C...397   | Selalu dimulai dengan 0x, terdiri dari 42 karakter.                |
 | Bitcoin        | bc1q...6f9    | Sering dimulai dengan 1, 3, atau bc1 (SegWit).                     |
 | Solana         | 4zV...8pQ     | Menggunakan Base58, kombinasi huruf besar dan kecil yang sensitif. |
+
+# Gas Fee
+
+## Apa itu Gas Fee?
+
+Gas fee merupakan biaya untuk menjalankan setiap transaksi pada jaringan blockchain, khususnya pada jaringan Etherium yang dibayarkan oleh pengguna.
+
+note: Di beberapa jaringan blockchain mungkin penamaannya berbeda, seperti pada jarinan Bitcoin dinamakan _Transaction Fee_
+
+## Mengapa Gas Fee Dibutuhkan dalam Blockhain ?
+
+1. Kompensasi untuk validator
+2. Mencegah spam transaksi
+3. Mengatur Prioritas Transaksi
+
+## Perhitungan Gas Fee
+
+Gas Fee dihitung berdasarkan 3 komponen:
+
+1. Gas Limit: Jumlah maksimum Gas yang siap Anda bayar untuk suatu transaksi. Misalnya, transfer ETH standar membutuhkan Gas Limit 21.000 unit. Jika transaksi kompleks (seperti smart contract), Gas Limit bisa mencapai 200.000+.
+2. Gas Price: Harga per unit Gas, biasanya denominasi dalam Gwei (1 Gwei = 0.000000001 ETH). Harga ini ditentukan oleh pengguna, tetapi validator akan memprioritaskan transaksi dengan Gas Price lebih tinggi.
+3. Gas Usage: Jumlah Gas yang sebenarnya digunakan. Jika Gas Usage < Gas Limit, sisa Gas akan dikembalikan ke dompet Anda.
+
+Rumus Gas Fee :
+
+```markdown
+Total Biaya = Gas Limit × Gas Price
+
+Contoh: Jika Gas Limit 21.000 dan Gas Price 50 Gwei, Total Biaya = 21.000 × 50 Gwei = 1.050.000 Gwei = 0.00105 ETH.
+```
+
+## Faktor Tinggi Rendahnya Gas Fee
+
+1. Kepadatan Jaringan
+   Semakin banyak orang yang menggunakan jaringan, akan terjadi persaingan sehingga para validator akan memprioritaskan transaksi dengan Gas Price tertinggi
+
+2. Jenis Transaksi
+   Transaksi sederhana (transfer token) memakan Gas lebih sedikit dibanding smart kontrak kompleks (seperti staking di DeFi atau minting NFT).
+
+3. Mekanisme Konsensus
+   Mekanisme konsesus menentukan seberapa cepat atau seberapa murah ribuan komputer(node) bisa mencapai kesepakatan untuk mencatat sebuah transaksi. Di mana terdapat 2 alasan yang membuat konsesus mepengaruhi tiggi rendahnya Gas fee:
+   - Kapasitas Transaksi
+     Setiap mekanisme konsensus memiliki batas kecepatan dalam memproses transaksi per detik (TPS).
+     - Proof of Work
+       Sistem di mana untuk menentukan kesepakatan dari para validator, memerlukan kukuatan komputasi (_Hardware_)
+     - Proof of Stake
+       Sistem yang menentukan kesepakatan dilakukan oleh pemegan koin
+   - Biaya opersiona node
+
+   note: untuk jaringan Etherium sekarang menggunakan Mekanisme konsesus Proof of Stake sejak tahun 2022
+
+## Strategi Menghemat Gas
+
+1. Transaksi di Jam Sepi
+2. Gunakan Layer 2: Layer 2 seperti Polygon, Optimism, atau Arbitrum menawarkan biaya 90-99% lebih murah dengan tetap terhubung ke keamanan Ethereum.
+3. Atur Gas Price Manual
+4. Hindari Kontrak Pintar yang Rumit
+5. Pilih Blockchain Alternatif Untuk transaksi harian,
+
+reference:
+
+- [Matauangkripto](https://matauangkripto.id/gas-fee/)
+
+# EVM(Etherium Virtual Mechine)
+
+## Apaitu EVM ?
+
+EVM (Etherium Virtual Mechine) merupakan mesin yang berjalan seperti komputer biasanya, hanya saja memiliki fungsi untuk menjalankan smart contract pada jaringan Etherium
+
+## Bagaimana Cara Kerja EVM ?
+
+1. Eksekusi Smart Contract
+   Ketika ada transaksi menggunakan smart contract, EVM akan membaca dan mengeksekusi smart contract di semua node(komputer).
+
+2. State Machine
+   EVM akan mencatat dan memperbarui status jaringa setiap ada transaksi terjadi.
+
+3. Gas Fee: Bahan Bakar EVM
+   Setiap operasi di EVM membutuhkan gas fee, yang merupakan unit biaya komputasi. Gas ini dibayar dalam Ether (ETH)
+
+4. Keamanan Melalui Konsensus
+   EVM akan berjalan menggunakan salah satu algoritma consesus, yaitu Proof of Stake.
