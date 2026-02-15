@@ -161,15 +161,19 @@ note: Di beberapa jaringan blockchain mungkin penamaannya berbeda, seperti pada 
 Gas Fee dihitung berdasarkan 3 komponen:
 
 1. Gas Limit: Jumlah maksimum Gas yang siap Anda bayar untuk suatu transaksi. Misalnya, transfer ETH standar membutuhkan Gas Limit 21.000 unit. Jika transaksi kompleks (seperti smart contract), Gas Limit bisa mencapai 200.000+.
-2. Gas Price: Harga per unit Gas, biasanya denominasi dalam Gwei (1 Gwei = 0.000000001 ETH). Harga ini ditentukan oleh pengguna, tetapi validator akan memprioritaskan transaksi dengan Gas Price lebih tinggi.
+2. Gas Price: Harga per unit Gas, biasanya denominasi dalam Gwei (1 ETH = 1.000.000.000 Gwei). Harga ini ditentukan oleh pengguna, tetapi validator akan memprioritaskan transaksi dengan Gas Price lebih tinggi.
 3. Gas Usage: Jumlah Gas yang sebenarnya digunakan. Jika Gas Usage < Gas Limit, sisa Gas akan dikembalikan ke dompet Anda.
 
 Rumus Gas Fee :
 
 ```markdown
 Total Biaya = Gas Limit × Gas Price
+Gas fee = Total Biaya / 1.000.000.000
 
-Contoh: Jika Gas Limit 21.000 dan Gas Price 50 Gwei, Total Biaya = 21.000 × 50 Gwei = 1.050.000 Gwei = 0.00105 ETH.
+Contoh:
+Jika Gas Limit 21.000 dan Gas Price 50 Gwei,
+Total Biaya = 21.000 × 50 Gwei = 1.050.000 Gwei
+Gas Fee = 1.050.000 / 1.000.000.000 = 0,00105 ETH
 ```
 
 ## Faktor Tinggi Rendahnya Gas Fee
