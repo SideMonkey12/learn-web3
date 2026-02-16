@@ -240,7 +240,7 @@ kesepakatan antara pihak-pihak yang terlibat.
 ## Bagaimana cara kerja Smart Contract
 
 Pada dasarnya Smart Contract bekerja berdasarkan "_Jika, maka atau ketika_" yang ditulis menggunakan bahasa pemrograman khusus _seperti Solidity untuk Etherium_. Artinya Smart Contract
-akan berjalan apabila diberi sebuah kondisi atau aturan yang kita buat, dan kemudian aturan atau kondisi tersebut harus terpenuhi agar transaksi dapat tercatat pada blockchain.
+akan berjalan apabila diberi sebuah kondisi atau aturan yang kita buat, dan kemudian aturan atau kondisi tersebut harus terpenuhi agar transakinya berhasil.
 
 # State
 
@@ -295,6 +295,16 @@ Di jaringan seperti Ethereum, State (sering disebut World State) mencakup inform
 
 4. Storage: Data permanen yang disimpan oleh smart contract (misal: siapa pemilik NFT nomor 123,
    atau berapa sisa likuiditas di Uniswap).
+
+## Perbedaan State vs History
+
+Ini adalah poin yang sering membuat orang bingung:
+
+- History (Riwayat): Adalah daftar semua blok dan transaksi yang pernah terjadi sejak blok
+  pertama (Genesis). Ini bersifat permanen dan terus bertambah besar.
+
+- State (Keadaan): Adalah hasil akhir dari semua riwayat tersebut.
+  Contoh: Jika Riwayat mencatat "A kirim 5 ke B" lalu "B kirim 2 ke C", maka State hanya mencatat saldo akhir: "A punya 0, B punya 3, C punya 2".
 
 # Immutability
 
