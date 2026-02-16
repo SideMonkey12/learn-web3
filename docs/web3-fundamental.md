@@ -199,7 +199,8 @@ Gas Fee = 1.050.000 / 1.000.000.000 = 0,00105 ETH
 ## Strategi Menghemat Gas
 
 1. Transaksi di Jam Sepi
-2. Gunakan Layer 2: Layer 2 seperti Polygon, Optimism, atau Arbitrum menawarkan biaya 90-99% lebih murah dengan tetap terhubung ke keamanan Ethereum.
+2. Gunakan Layer 2: Layer 2 seperti Polygon, Optimism, atau Arbitrum menawarkan biaya 90-99%
+   lebih murah dengan tetap terhubung ke keamanan Ethereum.
 3. Atur Gas Price Manual
 4. Hindari Kontrak Pintar yang Rumit
 5. Pilih Blockchain Alternatif Untuk transaksi harian,
@@ -227,3 +228,77 @@ EVM (Etherium Virtual Mechine) merupakan mesin yang berjalan seperti komputer bi
 
 4. Keamanan Melalui Konsensus
    EVM akan berjalan menggunakan salah satu algoritma consesus, yaitu Proof of Stake.
+
+# Smart Contract
+
+## Apa itu Smart Contract
+
+Smart Contract merupakan sebuah perjanjian yang berbentuk program komputer pada blockchain
+(_khususnya Etherium_), dengan tujuan untuk mengatur, mengeksekusi dan menegosiasikan
+kesepakatan antara pihak-pihak yang terlibat.
+
+## Bagaimana cara kerja Smart Contract
+
+Pada dasarnya Smart Contract bekerja berdasarkan "_Jika, maka atau ketika_" yang ditulis menggunakan bahasa pemrograman khusus _seperti Solidity untuk Etherium_. Artinya Smart Contract
+akan berjalan apabila diberi sebuah kondisi atau aturan yang kita buat, dan kemudian aturan atau kondisi tersebut harus terpenuhi agar transaksi dapat tercatat pada blockchain.
+
+# State
+
+## Apa itu State
+
+State(keadaan) merupakan _snapshot_ atau kondisi seluruh data di dalama pada satu titik waktu tertentu.
+
+## Bagaimana Cara Kerja State
+
+Blockchain bekerja dengan mengubah State A (lama) menjadi State B (baru) setiap kali ada blok baru yang divalidasi. Prosesnya mengikuti alur berikut:
+
+1. Kondisi Awal (Current State)
+   Jaringan memiliki daftar saldo dan data smart contract saat ini.
+
+2. Input (Transactions)
+   Pengguna mengirim transaksi (misal: "Kirim 2 ETH ke Budi")
+
+3. Validasi (EVM)
+   Ethereum Virtual Machine (EVM) memeriksa:
+   - Apakah tanda tangan digital valid?
+   - Apakah saldo pengirim cukup?
+   - Apakah nonce (urutan transaksi) sudah benar?
+
+4. Eksekusi
+   Jika valid, EVM menjalankan perintah tersebut dan menghitung hasil akhirnya.
+
+5. State Baru (Final State)
+   Saldo pengirim berkurang, saldo Budi bertambah. Kondisi terbaru ini sekarang menjadi "kebenaran" yang baru bagi seluruh jaringan.
+
+## Bagaimana State Disimpan secara Efisien? (Merkle Patricia Trie)
+
+Blockchain tidak menyimpan seluruh database di setiap blok karena itu akan memakan ruang yang sangat besar. Sebaliknya, mereka menggunakan struktur data bernama Merkle Patricia Trie.
+
+Cara kerjanya:
+
+1. Semua data akun dan saldo diatur dalam struktur pohon (Tree).
+
+2. Data-data kecil (daun pohon) digabungkan dan di-hash terus ke atas hingga menghasilkan
+   satu kode unik di pucuk pohon yang disebut State Root.
+
+3. State Root inilah yang dimasukkan ke dalam Block Header.
+
+## Apa saja yang ada di dalam "State"?
+
+Di jaringan seperti Ethereum, State (sering disebut World State) mencakup informasi semua akun yang ada:
+
+1. Saldo (Balance): Berapa banyak ETH yang dimiliki setiap alamat.
+
+2. Nonce: Jumlah transaksi yang sudah dikirim oleh alamat tersebut (untuk mencegah replay attack).
+
+3. Smart Contract Code: Kode program yang tersimpan di dalam jaringan.
+
+4. Storage: Data permanen yang disimpan oleh smart contract (misal: siapa pemilik NFT nomor 123,
+   atau berapa sisa likuiditas di Uniswap).
+
+# Immutability
+
+## Apa itu Immutability ?
+
+Immutability merupakan kemampuan yang dimiliki blockchain dalam mencatat secara permanen
+dan memastikan data/transaksi tidak dapat diubah oleh siapapun.
