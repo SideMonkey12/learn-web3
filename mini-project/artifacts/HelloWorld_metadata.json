@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "greet",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"custom:dev-run-script": "./scripts/deploy_with_ethers.ts",
+			"kind": "dev",
+			"methods": {},
+			"title": "Hello World",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/hello_world.sol": "HelloWorld"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/hello_world.sol": {
+			"keccak256": "0xa88199a8a359529d0a136fc4eff95f9bb521f8a9afd648602f43caf58743cbc4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://787d2c8d9bcdecc852030057f00ab1b538544f3b1aff757e644a315591d0930e",
+				"dweb:/ipfs/Qma6SuNkAahUDMfUUPh4RB7uJNiKYp5jbwZBaLwFjZ3dyK"
+			]
+		}
+	},
+	"version": 1
+}
