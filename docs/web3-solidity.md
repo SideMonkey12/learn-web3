@@ -176,3 +176,38 @@ contract PureContract {
   Ketika perlu melakukan operasi yang tidak memerlukan interaksi apa pun dengan _state_ kontrak,
   fungsi murni ideal untuk fungsi pembantu yang hanya bergantung pada parameter input.
   contoh: operasi matematika, manipulasi string, dll.
+
+# Function
+
+Function adalah sekelompok kode yang dapat digunakan kembali dan dapat dipanggil di mana saja dalam program.
+Ini menghilangkan kebutuhan untuk menulis kode yang sama berulang kali dan membantu programmer dalam menulis kode modular juga
+Fungsi memungkinkan programmer untuk membagi program besar menjadi sejumlah fungsi kecil dan mudah dikelola.
+
+```solidity
+contract Test {
+   function getResult() public view returns(uint){
+        //statement or local variabel
+   }
+}
+```
+
+## constructor
+
+Merupakann function khusus yang digunakan untuk inisialisasi nilai awal dalam variabel state, nantinya function ini akan dieksekusi pertama kali
+dan akan dijalankan satu kali saja pada saat kontrak pintar pertama kali dideploy (diunggah) ke blockchain.
+
+```solidity
+contract constructorExample {
+
+    string str;
+
+    constructor() public {
+        str = "GeeksForGeeks";
+    }
+
+    function getValue() public view returns (
+      string memory) {
+        return str;
+    }
+}
+```
