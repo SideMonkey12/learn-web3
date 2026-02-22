@@ -211,3 +211,41 @@ contract constructorExample {
     }
 }
 ```
+
+## Struct
+
+Struct (kependekan dari Structure) adalah tipe data kustom yang kamu buat sendiri untuk
+mengelompokkan beberapa variabel dengan tipe data berbeda ke dalam satu kesatuan.
+
+```solidity
+struct Pelajar {
+    string nama;
+    uint256 nilai;
+    bool lulus;
+}
+```
+
+## Mapping
+
+Mapping di Solidity berfungsi seperti _dictionary_ di bahasa pemrograman lainnya.
+mapping bekerja dengan cara menyimpan data dalam bentuk pasangan _key => value_.
+dimana _key_ merupakan id untuk mencari data yang berupa tipe data bawaan
+seperti (uint, string, dll), tetapi tidak boleh menggunakan tipe referensi seperti(array, mapping, struct)
+sedangkan _value_ merupakan isi atau nilai yang disimpan dan tipe datanya bebas.
+
+```solidity
+contract mapping_example {
+
+    //Defining structure
+    struct student
+    {
+        string name;
+        string subject;
+        uint8 marks;
+    }
+
+    // Creating a mapping
+    mapping (address => student) result;
+    address[] public student_result;
+}
+```
